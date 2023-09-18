@@ -1,5 +1,6 @@
 package org.launchcode.techjobs.oo;
 
+import javax.naming.Name;
 import java.util.Objects;
 
 public class Job {
@@ -29,6 +30,18 @@ public Job() {
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
     }
+    @Override
+    public String toString() {
+        return value;
+    }
+
+    @Override
+    public boolean equals(Object o) {  // Two objects are equal if they have the same id.
+        if (this == o) return true;
+        if (!(o instanceof Employer)) return false;
+        Employer employer = (Employer) o;
+        return getId() == employer.getId();
+    }
 
     public String getName() {
         return name;
@@ -39,7 +52,7 @@ public Job() {
     }
 
     public Employer getEmployer() {
-        return employer;
+        return employer.value;
     }
 
     public void setEmployer(Employer employer) {
@@ -73,7 +86,30 @@ public Job() {
     public int getId() {
         return id;
     }
-// TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
+
+    @Override
+    public String toString() {
+    String display = "";
+        if (name.equals("")) {
+        name = "Data not available";
+        }
+        if (employer.equals("")) {
+            employer.getEmployer() = "Data not available";
+        }
+        if (location.equals("")) {
+            location = "Data not available";
+        }
+        if (positionType.equals("")) {
+            positionType = "Data not available";
+        }
+        if (coreCompetency.equals("")) {
+            coreCompetency = "Data not available";
+        }
+
+
+    }
+
+    // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
 
     @Override
