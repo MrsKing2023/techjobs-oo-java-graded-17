@@ -3,6 +3,7 @@ package org.launchcode.techjobs.oo;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+import static java.lang.System.*;
 
 public class JobTest {
     //TODO: Create your unit tests here
@@ -36,5 +37,12 @@ public class JobTest {
 
     }
 
+    @Test
+    public void testToStringStartsAndEndsWithNewLine() {
+        Job six = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence" ));
+        String blankLine = six.toString();
+        assertEquals(String.valueOf(blankLine.charAt(0)), System.lineSeparator());
+        assertEquals(String.valueOf(blankLine.charAt(blankLine.length())), System.lineSeparator());
+    }
 
 }

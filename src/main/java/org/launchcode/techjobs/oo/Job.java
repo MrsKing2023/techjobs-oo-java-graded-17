@@ -1,12 +1,12 @@
 package org.launchcode.techjobs.oo;
 
+import javax.naming.Name;
 import java.util.Objects;
 
 public class Job {
 
     private int id;
     private static int nextId = 1;
-
     private String name;
     private Employer employer;
     private Location location;
@@ -20,7 +20,6 @@ public Job() {
     id = nextId;
     nextId++;
 }
-
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
         this();
         this.name = name;
@@ -28,6 +27,37 @@ public Job() {
         this.location = location;
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
+    }
+    @Override
+    public String toString() {
+            String display = "";
+          /*  if (name.equals("")) {
+                name = "Data not available";
+            }
+            //if (employer.equals("")) {
+               // employer.getEmployer() = "Data not available";
+           // }
+            if (location.equals("")) {
+                location = "Data not available";
+            }
+            if (positionType.equals("")) {
+                positionType = "Data not available";
+            }
+            if (coreCompetency.equals("")) {
+                coreCompetency = "Data not available";
+            }*/
+
+            display = String.format(System.lineSeparator() + "display" + System.lineSeparator());
+    return display;
+
+    }
+
+    @Override
+    public boolean equals(Object o) {  // Two objects are equal if they have the same id.
+        if (this == o) return true;
+        if (!(o instanceof Employer)) return false;
+        Employer employer = (Employer) o;
+        return getId() == employer.getId();
     }
 
     public String getName() {
@@ -73,15 +103,18 @@ public Job() {
     public int getId() {
         return id;
     }
-// TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
+
+
+
+    // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
 
-    @Override
+  /*  @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Job job)) return false;
         return id == job.id;
-    }
+    }*/
 
     @Override
     public int hashCode() {
