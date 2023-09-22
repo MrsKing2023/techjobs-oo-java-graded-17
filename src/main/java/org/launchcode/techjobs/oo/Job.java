@@ -3,6 +3,7 @@ package org.launchcode.techjobs.oo;
 import javax.naming.Name;
 import java.util.Objects;
 
+
 public class Job {
 
     private int id;
@@ -30,8 +31,8 @@ public Job() {
     }
     @Override
     public String toString() {
-            String display = "";
-          /*  if (name.equals("")) {
+            /*String display = "";
+            if (name.equals("")) {
                 name = "Data not available";
             }
             //if (employer.equals("")) {
@@ -45,10 +46,19 @@ public Job() {
             }
             if (coreCompetency.equals("")) {
                 coreCompetency = "Data not available";
-            }*/
-
+            }
             display = String.format(System.lineSeparator() + "display" + System.lineSeparator());
-    return display;
+    return display;*/
+
+        String display = System.lineSeparator() +
+                "ID: " + id + System.lineSeparator() +
+                "Name: " + name + System.lineSeparator() +
+                "Employer: " + getEmployer() + System.lineSeparator() +
+                "Location: " + getLocation() + System.lineSeparator() +
+                "Position Type: " + getPositionType() + System.lineSeparator() +
+                "Core Competency: " + getCoreCompetency() +
+                System.lineSeparator();
+        return display.replaceAll("\r", "");
 
     }
 
