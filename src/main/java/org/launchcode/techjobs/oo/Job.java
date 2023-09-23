@@ -3,9 +3,7 @@ package org.launchcode.techjobs.oo;
 import javax.naming.Name;
 import java.util.Objects;
 
-
 public class Job {
-
     private int id;
     private static int nextId = 1;
     private String name;
@@ -31,24 +29,21 @@ public Job() {
     }
     @Override
     public String toString() {
-            /*String display = "";
             if (name.equals("")) {
                 name = "Data not available";
             }
-            //if (employer.equals("")) {
-               // employer.getEmployer() = "Data not available";
-           // }
-            if (location.equals("")) {
-                location = "Data not available";
+            if (employer.getValue().equals("")) {
+                employer.setValue("Data not available");
             }
-            if (positionType.equals("")) {
-                positionType = "Data not available";
+            if (location.getValue().equals("")) {
+                location.setValue("Data not available");
             }
-            if (coreCompetency.equals("")) {
-                coreCompetency = "Data not available";
+            if (positionType.getValue().equals("")) {
+                positionType.setValue("Data not available");
             }
-            display = String.format(System.lineSeparator() + "display" + System.lineSeparator());
-    return display;*/
+            if (coreCompetency.getValue().equals("") ) {
+                coreCompetency.setValue("Data not available");
+            }
 
         String display = System.lineSeparator() +
                 "ID: " + id + System.lineSeparator() +
@@ -118,13 +113,6 @@ public Job() {
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
-
-  /*  @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Job job)) return false;
-        return id == job.id;
-    }*/
 
     @Override
     public int hashCode() {
