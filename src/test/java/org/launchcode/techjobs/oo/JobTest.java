@@ -36,7 +36,6 @@ public class JobTest {
     assertNotEquals(four, five);
 
     }
-
     @Test
     public void testToStringStartsAndEndsWithNewLine() {
         /*Job six = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence" ));
@@ -54,6 +53,24 @@ public class JobTest {
         String lastChar = String.valueOf(job.toString().charAt(job.toString().length()-1));
         assertEquals(firstChar, linebreak );
         assertEquals(lastChar, linebreak );
+    }
+    @Test
+    public void testToStringContainsCorrectLabelsAndData(){
+    Job seven = new Job("Barista",
+            new Employer("Starbucks"),
+            new Location("King of Prussia"),
+            new PositionType("Coffee Maker"),
+            new CoreCompetency("brew coffee") );
+
+    String expectedString = System.lineSeparator() +
+        "ID: " + seven.getId() + System.lineSeparator() +
+                "Name: Barista"  + System.lineSeparator() +
+                "Employer: Starbucks" + System.lineSeparator() +
+                "Location: King of Prussia" + System.lineSeparator() +
+                "Position Type: Coffee Maker" + System.lineSeparator() +
+                "Core Competency: brew coffee" +
+                System.lineSeparator();
+    assertEquals(expectedString, seven.toString());
     }
 
 }

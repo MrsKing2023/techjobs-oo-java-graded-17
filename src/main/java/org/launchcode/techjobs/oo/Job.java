@@ -58,7 +58,7 @@ public Job() {
                 "Position Type: " + getPositionType() + System.lineSeparator() +
                 "Core Competency: " + getCoreCompetency() +
                 System.lineSeparator();
-        return display.replaceAll("\r", "");
+        return display;
 
     }
 
