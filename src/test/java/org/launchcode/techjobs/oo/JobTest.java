@@ -1,6 +1,7 @@
 package org.launchcode.techjobs.oo;
 
 import org.junit.Test;
+import org.w3c.dom.ls.LSOutput;
 
 import static org.junit.Assert.*;
 import static java.lang.System.*;
@@ -44,12 +45,14 @@ public class JobTest {
                 new Location("StL"),
                 new PositionType("Back-end developer"),
                 new CoreCompetency("Java"));
-        String linebreak = lineSeparator().replaceAll("\r", "");;
-        String firstChar = String.valueOf(six.toString().charAt(0));
-        String lastChar = String.valueOf(six.toString().charAt(six.toString().length()-1));
-        assertEquals(firstChar, linebreak );
-        assertEquals(lastChar, linebreak );
+        String linebreak = System.lineSeparator();
+        String firstChar = String.valueOf(six.toString().substring(0,1));
+        String lastChar = String.valueOf(six.toString().substring(six.toString().length()-1));
+        assertEquals(true, six.toString().startsWith(System.lineSeparator()));
+        assertEquals(true, six.toString().endsWith(System.lineSeparator()));
     }
+
+
     @Test
     public void testToStringContainsCorrectLabelsAndData(){
     Job seven = new Job("Barista",
