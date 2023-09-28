@@ -8,12 +8,12 @@ public abstract class JobField {
     public int id;
     public static int nextId = 1;
     public String value;
-    public JobField(int id) {
+    public JobField() {
         id = nextId;
         nextId++;
     }
     public JobField(String value) {
-        //this();
+        this();
         this.value = value;
     }
     public String toString() {
